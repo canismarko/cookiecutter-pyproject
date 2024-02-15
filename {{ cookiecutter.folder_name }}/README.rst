@@ -29,7 +29,8 @@ The following will download the IOC, and configure it for management using syste
 
 .. code-block:: bash
 
-    git clone https://github.com/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}
+    git clone https://git.aps.anl.gov/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}
+    conda activate {{ cookiecutter.conda_environment }}
     pip install -e {{ cookiecutter.repo_name }}
     ln -s `pwd`/{{ cookiecutter.repo_name }}/{{ cookiecutter.systemd_service }}.service ~/.config/systemd/user/
     systemctl --user daemon-reload

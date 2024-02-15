@@ -15,7 +15,7 @@ Requirements for the Template
 Starting a New Project
 ----------------------
 
-::
+.. code-block:: bash
 
   $ cookiecutter https://github.com/spc-group/cookiecutter-caproto-ioc
 
