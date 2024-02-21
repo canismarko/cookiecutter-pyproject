@@ -1,17 +1,14 @@
 {
     "project_name": "project_name",
-    "gitlab_repo_group": "xsdspc",
+    "github_repo_group": "canismarko",
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-    "default_prefix": "SIM:",
-    "author_name": "APS Spectroscopy Group",
-    "email": "xsdspc@lists.anl.gov",
+    "author_name": "Mark Wolfman",
+    "email": "",
     "folder_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
     "import_name": "{{ cookiecutter.folder_name }}",
-    "conda_environment": "caproto-iocs",
-    "systemd_service": "{{ cookiecutter.folder_name }}",
     "description": "{{ cookiecutter.project_name }}",
     "license": ["ANL", "MIT", "BSD-3"],
-    "auto_gitlab_setup": ["no","yes"],
+    "auto_github_setup": ["no","yes"],
     "git_remote_name": "origin",
     "year": "2024"
 }

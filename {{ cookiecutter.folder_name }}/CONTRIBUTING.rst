@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://git.aps.anl.gov/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}/issues.
+Report bugs at https://github.com/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}/issues.
 
 If you are reporting a bug, please include:
 
@@ -42,7 +42,7 @@ or even on the web in blog posts, articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://git.aps.anl.gov/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}/issues.
+The best way to send feedback is to file an issue at https://github.com/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}/issues.
 
 If you are proposing a feature:
 
@@ -59,7 +59,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.repo_name }}` for loc
 1. Fork the `{{ cookiecutter.repo_name }}` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@git.aps.anl.gov.com:your_name_here/{{ cookiecutter.repo_name }}.git
+    $ git clone git@github.com.com:your_name_here/{{ cookiecutter.repo_name }}.git
 
 3. Install your local copy into a new conda environment. Assuming you have conda installed, this is how you set up your fork for local development::
 

@@ -25,7 +25,7 @@ dependencies = []
 dev = ["black", "pytest"]
 
 [project.urls]
-Homepage = "https://git.aps.anl.gov/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}"
+Homepage = "https://github.com/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}"
 
 [project.scripts]
 # command = "{{ cookiecutter.import_name }}.__main__:main"
