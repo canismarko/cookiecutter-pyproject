@@ -19,7 +19,7 @@
 
 project = "{{ cookiecutter.project_name }}"
 copyright = "2024, Argonne National Laboratory"
-author = "{{ cookiecutter.author }}"
+author = "{{ cookiecutter.author_name }}"
 
 # The full version, including alpha/beta/rc tags
 release = "0.0.0"

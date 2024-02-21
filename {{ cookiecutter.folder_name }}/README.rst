@@ -13,7 +13,7 @@ Documentation
 -------------
 
 Sphinx-generated documentation for this project can be found here:
-https://{{ cookiecutter.gitlab_repo_group }}.github.io/{{ cookiecutter.repo_name}}/
+https://{{ cookiecutter.github_repo_group }}.github.io/{{ cookiecutter.repo_name}}/
 
 Requirements
 ------------
@@ -27,7 +27,7 @@ The following will download the package and load it into the python environment.
 
 .. code-block:: bash
 
-    git clone https://github.com/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}
+    git clone https://github.com/{{ cookiecutter.github_repo_group }}/{{ cookiecutter.repo_name }}
     pip install -e {{ cookiecutter.repo_name }}
 
 

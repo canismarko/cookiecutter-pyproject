@@ -28,21 +28,19 @@ Zero to IOC
   # Use the cookiecutter
   $ cookiecutter https://github.com/spc-group/cookiecutter-caproto-ioc
   project_name [project_name]:
-  gitlab_repo_group [25ID]:
+  github_repo_group [canismarko]:
   repo_name [project_name]:
-  default_prefix [SIM:]:
-  author_name [SLAC National Accelerator Laboratory]:
+  author_name [Mark Wolfman]:
   email []:
   folder_name [project_name]:
   import_name [project_name]:
   description [project_name]:
   Select license:
-  1 - SLAC
-  2 - BNL
+  1 - ANL
   3 - MIT
   4 - BSD-3
   Choose from 1, 2, 3, 4 [1]:
-  Select auto_gitlab_setup:
+  Select auto_github_setup:
   1 - no
   2 - yes
   Choose from 1, 2 [1]:
@@ -51,38 +49,18 @@ Zero to IOC
   1 - no
   2 - yes
   Choose from 1, 2 [1]:
-  Select use_x11_on_travis:
-  1 - no
-  2 - yes
-  Choose from 1, 2 [1]:
   year [2020]:
 
   # Create a test environment
-  $ conda create -n my_test_env python=3.7
+  $ conda create -n my_test_env python
   $ conda activate my_test_env
 
   # Install the project in that environment
   $ cd project_name
-  $ pip install .
+  $ pip install ".[dev]"
 
-  # Run the IOC
-  $ project_name --list-pvs
-  [I 17:33:28.970       server:  133] Asyncio server starting up...
-  [I 17:33:28.971       server:  146] Listening on 0.0.0.0:5064
-  [I 17:33:28.972       server:  205] Server startup complete.
-  [I 17:33:28.973       server:  207] PVs available:
-      SIM:SampleValue
-      SIM:SampleScanned
-  This happens at IOC boot!
-  Initial value was: 0.0
-  Now it is: 0.1
-
-  ^C
-  [I 17:33:30.442       server:  212] Server task cancelled. Will shut down.
-  [I 17:33:30.442       server:  222] Server exiting....
-
-  # Alternatively:
-  $ python -m project_name --list-pvs
+  # Run the tests
+  pytest
 
   # Build the docs:
   $ cd docs

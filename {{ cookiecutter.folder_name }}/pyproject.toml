@@ -22,10 +22,10 @@ keywords = []
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["black", "pytest"]
+dev = ["black", "pytest", "flake8", "isort"]
 
 [project.urls]
-Homepage = "https://github.com/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}"
+Homepage = "https://github.com/{{ cookiecutter.github_repo_group }}/{{ cookiecutter.repo_name }}"
 
 [project.scripts]
 # command = "{{ cookiecutter.import_name }}.__main__:main"
