@@ -1,6 +1,6 @@
 {
     "project_name": "project_name",
-    "gitlab_repo_group": "25id",
+    "gitlab_repo_group": "xsdspc",
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
     "default_prefix": "SIM:",
     "author_name": "APS Spectroscopy Group",
