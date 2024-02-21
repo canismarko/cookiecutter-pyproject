@@ -10,7 +10,7 @@ authors = [
 ]
 description = "{{ cookiecutter.description }}"
 readme = "README.rst"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
@@ -18,14 +18,14 @@ classifiers = [
     "Topic :: Scientific/Engineering",
     "Topic :: System :: Hardware",
 ]
-keywords = ["caproto", "controls"]
-dependencies = ["caproto", "caproto-apps"]
+keywords = []
+dependencies = []
 
 [project.optional-dependencies]
-dev = ["black", "pytest", "pytest-asyncio"]
+dev = ["black", "pytest"]
 
 [project.urls]
-Homepage = "https://github.com/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}"
+Homepage = "https://git.aps.anl.gov/{{ cookiecutter.gitlab_repo_group }}/{{ cookiecutter.repo_name }}"
 
 [project.scripts]
-start_{{ cookiecutter.import_name }} = "{{ cookiecutter.import_name }}.__main__:main"
+# command = "{{ cookiecutter.import_name }}.__main__:main"

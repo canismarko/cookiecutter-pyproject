@@ -1,0 +1,56 @@
+# Based on tutorial: https://autobencoder.com/2020-08-24-conda-actions/
+
+name: Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  DISPLAY: ":99"
+  PYDM_DEFAULT_PROTOCOL: ca
+  BLUESKY_DEBUG_CALLBACKS: 1
+
+
+jobs:
+  build-linux:
+    defaults:
+      run:
+        shell: bash -l {0}
+    runs-on: ubuntu-22.04
+    strategy:
+      max-parallel: 5
+    steps:
+    - uses: actions/checkout@v3
+    {% if cookiecutter.use_mamba %}
+    - name: Install micromamba
+      uses: mamba-org/setup-micromamba@v1
+      with:
+        environment-file: environment.yml
+    {% endif %}
+    - name: Install \{
+      run: pip install -e ".[dev]"
+    - name: Environment info
+      run: |
+        env
+        micromamba info
+        micromamba list
+    - name: Lint
+      run: |
+        # Check for syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Make sure black code formatting is applied
+        black --check --preview src/
+        # Make sure import orders are correct
+        isort --check src/
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Licensing
+      run: |
+        # Check that the license snippet is in each python source
+        find src/ -type f -name "*.py" -exec grep -H -c 'Copyright © 2023, UChicago Argonne, LLC' {} \; | grep 0$ | cut -d':' -f1
+    - name: Test with pytest in Xvfb
+      run: xvfb-run python -m pytest -vv --timeout=120
