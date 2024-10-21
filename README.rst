@@ -17,7 +17,7 @@ Starting a New Project
 
 .. code-block:: bash
 
-  $ cookiecutter https://github.com/spc-group/cookiecutter-caproto-ioc
+  $ cookiecutter https://github.com/canismarko/cookiecutter-pyproject
 
 
 Zero to IOC
@@ -26,7 +26,7 @@ Zero to IOC
 .. code-block:: sh
 
   # Use the cookiecutter
-  $ cookiecutter https://github.com/spc-group/cookiecutter-caproto-ioc
+  $ cookiecutter https://github.com/canismarko/cookiecutter-pyproject
   project_name [project_name]:
   github_repo_group [canismarko]:
   repo_name [project_name]:
