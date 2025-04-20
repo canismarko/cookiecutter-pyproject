@@ -1,6 +1,6 @@
 # https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python
 
-name: {{ cookie_cutter.project_name }}
+name: {{ cookiecutter.project_name }}
 
 on: [push]
 
@@ -14,14 +14,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python ${{ "{{" }} matrix.python-version {{ "}}" }}
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ "{{" }} matrix.python-version {{ "}}" }}
       # You can test your matrix by printing the current Python version
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-      - name: Install {{ cookie_cutter.project_name }}
+      - name: Install {{ cookiecutter.project_name }}
         run: pip install -e ".[dev]"
       - name: Environment info
         run: |
@@ -39,5 +39,5 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Static type checking
         run: mypy
-      - name: {{ cookie_cutter.project_name }} tests with pytest
+      - name: {{ cookiecutter.project_name }} tests with pytest
         run: pytest -vv
