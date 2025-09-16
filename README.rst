@@ -1,32 +1,26 @@
-========================
-caproto IOC Cookiecutter
-========================
+==========================
+Pyproject IOC Cookiecutter
+==========================
 
 Requirements for the Template
 -----------------------------
-- Python >= 3.10
-- `Cookiecutter Python package <http://cookiecutter.readthedocs.org/en/latest/installation.html>`_ >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
-
-::
-
-  $ pip install cookiecutter
-
+- UV
 
 Starting a New Project
 ----------------------
 
 .. code-block:: bash
 
-  $ cookiecutter https://github.com/canismarko/cookiecutter-pyproject
+  $ uvx cookiecutter https://github.com/canismarko/cookiecutter-pyproject
 
 
-Zero to IOC
------------
+Zero to Project
+---------------
 
 .. code-block:: sh
 
   # Use the cookiecutter
-  $ cookiecutter https://github.com/canismarko/cookiecutter-pyproject
+  $ uvx cookiecutter https://github.com/canismarko/cookiecutter-pyproject
   project_name [project_name]:
   github_repo_group [canismarko]:
   repo_name [project_name]:
@@ -52,15 +46,12 @@ Zero to IOC
   year [2020]:
 
   # Create a test environment
-  $ conda create -n my_test_env python
-  $ conda activate my_test_env
 
   # Install the project in that environment
   $ cd project_name
-  $ pip install ".[dev]"
 
   # Run the tests
-  pytest
+  uv run --dev pytest
 
   # Build the docs:
   $ cd docs
@@ -73,40 +64,6 @@ Zero to IOC
   $ xdg-open build/html/index.html
 
 
-Manually Configuring a New Project
-----------------------------------
-
-To manually setup versioneer, activate an environment with versioneer installed
-and run the following command and commit the new files it makes. ::
-
-  $ versioneer install
-
-Doctr pushes automatically generated docs from travis to a github pages site.
-To manually begin using doctr first enable the `use_doctr` setting during
-cookiecutter setup and push the newly created repository to github.  In the
-settings page on the github repository, make sure to enable pages on the
-`gh-pages` branch. Make sure travis has recognized and been set to process your
-new repository. Once setup has completed, activate an environment with doctr
-installed and run this command. ::
-
-  $ doctr configure
-
-After entering your information, add the secure key to env/global/secure in the
-.travis.yml file. In the settings page on the github repository, make sure to
-enable pages on the `gh-pages` branch. **Note:** Branch protection should be
-enabled for all branches in the repository hosting the documentation as the key
-could potentially allow others to push to this repository.
-
-
-
-Installing Development Requirements
------------------------------------
-::
-
-  $ pip install -Ur requirements.txt
-  $ pip install -Ur dev-requirements.txt
-  
-  
 Cookiecutter?
 -------------
 

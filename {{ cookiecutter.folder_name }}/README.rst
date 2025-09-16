@@ -28,12 +28,10 @@ The following will download the package and load it into the python environment.
 .. code-block:: bash
 
     git clone https://github.com/{{ cookiecutter.github_repo_group }}/{{ cookiecutter.repo_name }}
-    pip install -e {{ cookiecutter.repo_name }}
 
 
 Running the Tests
 -----------------
 ::
 
-  $ pip install -e .
-  $ pytest -vv
+  $ uv run --dev pytest
